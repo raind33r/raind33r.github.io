@@ -83,17 +83,17 @@
 </pre></p>
 
           <p>Take your time at each step to understand everything, you are, and you will be expected to do tons of independent research.</p>
-
-          <p>That being sad this is easy, yes it looks like some basic nosqli: </br>
-POST /login HTTP/1.1 </br>
-Host: example.org </br>
-Content-Type: application/json </br>
+<p>That being sad this is easy, yes it looks like some basic nosqli: </p>
+          <pre style='color:#55cc66;background:#001800;'>
+POST /login HTTP/1.1
+Host: example.org 
+Content-Type: application/json 
 Content-Length: 38
-{ </br>
-“username”: “admin”, </br>
-“Password”: {'$gt': “”} </br>
-}
-</p>
+{
+“username”: “admin”, 
+“Password”: {'$gt': “”}
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 15:58:51 UTC -->
 
           <p>Without further adue lets do the real warm up:</p>
 
@@ -105,18 +105,22 @@ Content-Length: 38
 
           <blockquote class="blockquote">Please take your time to finish this task on your own, and then come back to check my solution.</blockquote>
 
-          <p>root@kali:~/Desktop/OFFSEC/OWASP2017/A1-INJECTION/NOSQL/node_modules/express-cart# grep login -rn .<br>
+          <pre style='color:#55cc66;background:#001800;'>root@kali:~/Desktop/OFFSEC/OWASP2017/A1-INJECTION/NOSQL/node_modules/express-cart# grep login -rn .
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 16:00:30 UTC -->
 <br>
-Among other results it seems that this part of code deals a lot with logging in:<br>
+Among other results it seems that this part of code deals a lot with logging in:
 <br>
-./routes/admin.js:26:// login form<br>
-./routes/admin.js:27:router.get('/admin/login', (req, res) => {<br>
-./routes/admin.js:36:        // we check for a user. If one exists, redirect to login form otherwise setup<br>
-./routes/admin.js:40:            res.render('login', {<br>
-./routes/admin.js:57:// login the user and check the password<br>
-./routes/admin.js:58:router.post('/admin/login_action', (req, res) => {<br>
+<pre style='color:#55cc66;background:#001800;'>./routes/admin.js:26:// login form
+./routes/admin.js:27:router.get('/admin/login', (req, res) => {
+./routes/admin.js:36:        // we check for a user. If one exists, redirect to login form otherwise setup
+./routes/admin.js:40:            res.render('login', {
+./routes/admin.js:57:// login the user and check the password
+./routes/admin.js:58:router.post('/admin/login_action', (req, res) => {
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 16:01:03 UTC -->
 <br>
-Lets check admin.js and see what is responsible for loggin in, and of course try to find user input<br>
+Lets check admin.js and see what is responsible for loggin in, and of course try to find user input
 <br>
 The first code block is a login form:<br>
 <br>
@@ -244,7 +248,7 @@ When the email is tested and it returns a valid response with an ending characte
           <a href="#">
             <img class="img-fluid" src="img/raindeer.png" alt="">
           </a>
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about. And then a wild reindeer appeared.</span>
       </div>
     </div>
   </article>

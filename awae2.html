@@ -83,11 +83,12 @@
 
           <blockquote class="blockquote">Please take the time to understand</blockquote>
 
-          <pre>If you have not guessed it already this is about the box named CTF on HTB.
+          <p>If you have not guessed it already this is about the box named CTF on HTB.
 If you want to do yourself the black box approach please stop here
 and try to do it, or just look <a href="https://www.youtube.com/watch?v=51JQg202csw">ippsecs video</a> and then follow my
 solution steps to get to the starting point:
-$username = 'ldapuser';
+</p>
+<pre style='color:#55cc66;background:#001800;'>$username = 'ldapuser';
 $password = 'e398e27d5c4ad45086fe431120932a01';
 
 apt install stoken
@@ -99,9 +100,8 @@ stoken import --token 2854494900113571565316515456523355707131674114457271406041
 stoken setpin # Enter 0000
 
 stoken --use-time=$(python date.py)
-
-where date.py gets the box date:
 </pre>
+<!--Created using ToHtml.com on 2019-11-24 16:02:14 UTC -->
 <pre style='color:#000000;background:#ffffff;'><span style='color:#696969; '>#!/usr/bin/python</span>
 <span style='color:#800000; font-weight:bold; '>from</span> requests <span style='color:#800000; font-weight:bold; '>import</span> get
 <span style='color:#800000; font-weight:bold; '>from</span> datetime <span style='color:#800000; font-weight:bold; '>import</span> datetime
@@ -284,7 +284,7 @@ After, we get the response and increase the loop counter to point to out current
           <a href="#">
             <img class="img-fluid" src="img/raindeer.png" alt="">
           </a>
-          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about. And then a wild reindeer appeared.</span>
 
           
         </div>

